@@ -1,0 +1,11 @@
+#!/bin/bash -l
+
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --cpus-per-task=1
+#SBATCH --time=20:00
+#SBATCH --account=math-505
+#SBATCH --qos=serial
+#SBATCH --output=./resultQR.txt
+module load gcc openmpi python py-mpi4py
+srun python QR.py D TSQR
